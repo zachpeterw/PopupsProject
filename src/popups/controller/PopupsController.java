@@ -3,7 +3,6 @@ package popups.controller;
 import java.util.List;
 import java.util.ArrayList;
 import popups.view.PopupViewer;
-import input.view.PopupDisplay;
 import popups.model.Thingy;
 
 public class PopupsController
@@ -11,7 +10,6 @@ public class PopupsController
 	private  PopupViewer display;
 	private List<Thingy> thingyList;
 	private Thingy bork;
-	private PopupDisplay myPopups;
 	
 	public PopupsController()
 	{
@@ -40,7 +38,7 @@ public class PopupsController
 		boolean isInt = false;
 		try
 		{
-			int validInteger = Integer.parseInt(input);
+			int validInt = Integer.parseInt(input);
 			isInt = true;
 		}
 		catch(NumberFormatException error)
@@ -50,7 +48,16 @@ public class PopupsController
 		return isInt;
 	}
 	
-	
+	private void learnLists()
+	{
+		display.displayMessage("This is the size of the list: " + thingyList.size());
+		Thingy firstThingy = new Thingy();
+		thingyList.add(firstThingy);
+		display.displayMessage("This is the size of the list: " + thingyList.size());
+		Thingy secondThingy = new Thingy();
+		thingyList.add(secondThingy);
+		
+	}
 	
 	
 

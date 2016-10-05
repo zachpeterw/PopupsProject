@@ -14,7 +14,7 @@ public class PopupsController
 	public PopupsController()
 	{
 		display = new PopupViewer();
-		thingylist = new ArrayList<Thingy>();
+		//thingylist = new ArrayList<Thingy>();
 		
 	}
 	
@@ -24,14 +24,14 @@ public class PopupsController
 	}
 
 	
-	private void askQuestionLoop()
-	{
-		String answer = "sample";
-		while(answer != null && !isDouble(answer))
-		{
-			answer = display.collectResponse("must type in a double");
-		}
-	}
+	//private void askQuestionLoop()
+	//{
+	//	String answer = "sample";
+	//	while(answer != null && !isDouble(answer))
+	//	{
+	//		answer = display.collectResponse("must type in a double");
+	//	}
+	//}
 	
 	private boolean isInteger(String input)
 	{
@@ -56,7 +56,17 @@ public class PopupsController
 		display.displayMessage("This is the size of the list: " + thingyList.size());
 		Thingy secondThingy = new Thingy();
 		thingyList.add(secondThingy);
-		
+		display.displayMessage("This is the size of the list:" + thingyList.size());
+		Thingy thirdThingy = new Thingy();
+		thingyList.add(thirdThingy);
+		display.displayMessage("This is the size of the list:" + thingyList.size());
+		 for (int index = 0; index < 5; index++)
+		 {
+			 Thingy loopThingy = new Thingy();
+			 thingyList.add(loopThingy);
+		 }
+	
+	
 	}
 	
 	

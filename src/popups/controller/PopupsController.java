@@ -9,12 +9,11 @@ public class PopupsController
 {
 	private  PopupViewer display;
 	private List<Thingy> thingyList;
-	private Thingy bork;
 	
 	public PopupsController()
 	{
 		display = new PopupViewer();
-		//thingylist = new ArrayList<Thingy>();
+		thingyList = new ArrayList<Thingy>();
 		
 	}
 	
@@ -65,6 +64,25 @@ public class PopupsController
 			 Thingy loopThingy = new Thingy();
 			 thingyList.add(loopThingy);
 		 }
+		 
+		 for (int index = 0; index < thingyList.size(); index++)
+		 {
+			 display.displayMessage("The thingy at this spot is: " + thingyList.get(index).getWords());
+			
+		 }
+		 
+		 Thingy specialThingy = new Thingy();
+		 specialThingy.setWords("not null stuff");
+		 
+		 thingyList.add(1, specialThingy);
+		 
+		 for(int index = 0; index < thingyList.size(); index++)
+		 {
+			 display.displayMessage("The message at " + index + " is " + thingyList.get(index).getWords());
+		 }
+		 
+	
+	
 	
 	
 	}
